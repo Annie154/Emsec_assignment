@@ -19,7 +19,7 @@ app.post('/register',(req,res)=>{
      if(name && password && role){
         User.findOne({name, name},async(err,user)=>{
             if(user){
-                res.send({message : "user already exists"});
+                res.send({message : "user already exist."});
             }else{
                 const user = new User({
                     name : name,
@@ -27,7 +27,7 @@ app.post('/register',(req,res)=>{
                     role : role
                  });
                  const result = await  user.save();
-                res.send({message : "you are loggedIn"})
+                res.send({message : "You are logged in."})
             }
         })
      }else{
